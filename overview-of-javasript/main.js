@@ -70,16 +70,6 @@ console.log(numbers);
 const [x, y, , ...rate] = numbers;
 console.log(x, y, rate);
 
-console.log("cera is called fo rhte main ");
-
-console.log("wtih main is the process is called for the main ");
-const ar = ["deeapk", "shif", "unshift"];
-const withmanyother = ar.entries();
-
-const freeCodeCamp = {
-  frontend: "React",
-  backend: "Node",
-  database: "MongoDB",
-};
-
-console.error(freeCodeCamp);
+setTimeout(() => {
+  console.log("we are couple anju and deepak");
+}, 2000);
