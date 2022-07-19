@@ -1,0 +1,15 @@
+{
+  "name": "improved-workflow",
+  "version": "1.0.0",
+  "description": "learnin about how to improve workflow",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "deepak pal",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
