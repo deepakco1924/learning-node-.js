@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+.main-header {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  background-image: url("/img/lorem-nRHks6XP4m8-unsplash.jpg");
+  background-position-x: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
