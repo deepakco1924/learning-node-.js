@@ -17,7 +17,7 @@
           </header>
           <div class="card__image">
             <img
-              src="<%= product.imageUrl %>"
+              src="/<%= product.imageUrl %>"
               alt="A Book"
             />
           </div>
@@ -30,11 +30,10 @@
           <div class="card__actions">
             
            <a href="edit-product/<%= product._id%>?edit=true" class="btn">Edit</a>
-            <form action="/admin/delete-from-cart" method="POST">
             <input type="hidden" value="<%=product._id%>" name="productId">
-            <button class="btn">Delete</button>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn" onclick="deleteProduct(this)">Delete</button>
 
-            </form>
           </div>
         </article>
         <% }%>
@@ -43,4 +42,5 @@
       <h1>No products Found</h1>
       <% } %>
     </main>
+    <script src="/js/admin.js"></script>
 <%- include("../includes/end.ejs") %>

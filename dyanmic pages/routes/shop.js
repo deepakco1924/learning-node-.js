@@ -4,14 +4,17 @@ const shopcontroller = require("../controllers/shop");
 const path = require("path");
 const rootdir = require("../util/path");
 const admintdata = require("./admin.js");
+const isAuth = require("../middleware/is-auth");
 router.get("/", shopcontroller.getindex);
-router.get("/products",shopcontroller.getProducts);
-router.get("/products/:productId",shopcontroller.getProduct)
-router.get("/cart",shopcontroller.getCart)
-router.post("/cart",shopcontroller.postCart)
-router.get("/orders",shopcontroller.getorders)
-// router.get("/checkout",shopcontroller.getCheckout)
-router.post("/cart-delete-item",shopcontroller.postCartDeleteProduct)
-router.post("/create-order",shopcontroller.postOrder);
-
+router.get("/products", shopcontroller.getProducts);
+router.get("/products/:productId", shopcontroller.getProduct);
+router.get("/cart", isAuth, shopcontroller.getCart);
+router.post("/cart", isAuth, shopcontroller.postCart);
+router.get("/orders", isAuth, shopcontroller.getorders);
+router.post("/cart-delete-item", isAuth, shopcontroller.postCartDeleteProduct);
+router.post("/create-order", isAuth, shopcontroller.postOrder);
+router.get("/orders/:orderId", isAuth, shopcontroller.getInvoice);
+router.post("/checkout", isAuth, shopcontroller.getCheckout);
+router.get("/checkout/cancel", shopcontroller.getCheckout);
+router.get("/checkout/success", shopcontroller.postOrder);
 module.exports = router;
